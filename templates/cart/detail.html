@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/detail.css' %}">
+{% endblock %}
+{% block search %}{% endblock %}
+{% block content %}
+
+
+<h5 class="text-center mt-5">Your Shopping Cart</h5>
+{% if cart|length > 0 %}
+<div class="container p-0 d-lg-none mt-4" style="margin-bottom:250px;" id="money">
+        <div id="snackbar">Updated to Cart</div>
+        {% for item in cart %}
+        {% with product=item.product %}
+       
+       
+        <div class="row p-2 bg-white border">
+                
+               <div class="col-5 pr-0">
+                <img class="img-responsive" style="width:100%;" src="
+                {{ product.image.url }}" alt="">
+               </div>
+               <div class="col-7" style="font-size:14px;">
+                   
+                   <p>{{ product.name }}<a class="float-right" href="{% url "cart:cart_remove" product.id %}" id="remove">
+                        <span aria-hidden="true">&times;</span>
+                    </a></p>
+                   <p> Quantity <form action="{% url "cart:cart_add" product.id %}" method="post" class="js-book-create-form">
+                        {{ item.update_quantity_form.quantity }}
+                        {{ item.update_quantity_form.update }}
+                        <button type="submit" value="Update" class="border-0 rounded-0 btn btn-sm btn-success">Update</button>
+                        {% csrf_token %}
+                    </form></p>
+                   <p>Total Price:  ₦{{ item.total_price }}</p>
+               </div>
+               
+            </div>
+ 
+            {% endwith %}
+            {% endfor %}
+
+                 <div class="row p-2 bg-light border" id="mobilee">
+                     
+                     <div class="row p-2" id="mobile">
+
+                     {% include 'includes/partial_mobile_me.html' %}
+
+                    </div>
+                        
+                        
+                   
+                    
+                 </div>
+                 <div class="col-12 text-center">
+                        <a href="{% url 'home' %}" class="btn rounded-0 btn-primary mt-2">Continue shopping</a> 
+                        <a href="{% url "orders:order_create" %}" class="btn rounded-0 btn-md btn-success mt-2">Checkout</a>
+                 </div>
+
+
+                 
+</div>
+<div class="container d-none d-md-block mt-5 table-responsive" style="margin-bottom:250px;">
+
+
+<table class="table table-hover table-striped table-dark table-bordered" id="cartel">
+    <thead class="thead thead-dark text-center">
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Remove</th>
+            <th>Unit price</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody id="detail">
+        {% for item in cart %}
+        {% with product=item.product %}
+        <tr>
+            <td class="align-middle text-center" style="height:100px;">
+                    <img class="img-responsive float-left" style="width:130px;height:100%;" src="
+                    {{ product.image.url }}" alt=""><p class="mt-4">{{ product.name }}</p></td>
+            <td class="align-middle">
+                <form action="{% url "cart:cart_add" product.id %}" method="post" class="js-update-create-form" novalidate>
+                    {{ item.update_quantity_form.quantity }}
+                    {{ item.update_quantity_form.update }}
+                    <button type="submit" value="Update" class="border-0 rounded-0 btn btn-sm btn-success">Update</button>
+                    
+                    {% csrf_token %}
+                </form>
+            </td>
+            <td class="align-middle"><a class="border-0 btn btn-danger btn-sm rounded-0" href="{% url "cart:cart_remove" product.id %}" id="remove">Remove</a></td>
+            <td class="text-center align-middle">₦{{ item.price }}</td>
+            <td class="text-center align-middle" id="sure">₦{{ item.total_price }}</td>
+        </tr>
+        
+        {% endwith %}
+        {% endfor %}
+        {% if cart.coupon %}
+            <tr class="text-light" style="background-color:rgb(23, 26, 29);" id="sub">
+                {% include 'includes/partial_sub.html' %}
+            </tr>
+            <tr id="coupo">
+                {% include 'includes/partial_coupon.html' %}
+            </tr>
+            {% endif %}
+        <tr class="text-light" style="background-color:rgb(23, 26, 29);" id="tots">
+            {% include 'includes/partial_remove_me.html' %}
+        </tr>
+        
+    </tbody>
+    
+</table>
+
+
+<div class="container"></div>
+<p class="text-left mt-4"> Apply a coupon :</p>
+<form class="" action="{% url 'coupons:apply' %}" method="post" novalidate>
+    {{ coupon_apply_form }}
+    {% include 'includes/form.html' %}
+    <input class="btn btn-secondary" type="submit" value="Apply">
+    {% csrf_token %}
+</form>
+
+
+
+<p class="text-center mt-4">
+    <a href="{% url 'home' %}" class="btn rounded-0 btn-md btn-primary">Continue shopping</a>
+    
+    <a href="{% url "orders:order_create" %}" class="btn rounded-0 btn-md btn-success">Checkout</a>
+</p>
+</div>
+{% else %}
+<div class="container text-center mt-5" style="margin-bottom:380px;">
+    <div class="alert text-center mb-4 alert-danger alert-dismissible fade show" role="alert">
+         Your Cart is Empty... Go back to continue shopping
+        </div>
+    <a href="{% url 'home' %}" class="btn btn-primary">Continue shopping</a>  
+</div>
+
+{% endif %}
+
+{% endblock %}

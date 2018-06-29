@@ -1,0 +1,43 @@
+div .pdetail p{
+    color: rgb(46, 44, 44);
+}
+
+
+
+div .pdetail button{
+    background-color: #777;
+    border-color: #777;border-radius: 0px;
+}
+
+
+div .pdetail button:hover{
+    background-color: black;
+    border-color:black;
+    cursor: pointer;
+}
+
+ div .pdetail a:hover{
+    background-color: aqua;
+    color: white;
+    border-radius: 100px;
+    border-color: aqua;
+
+}
+
+
+
+footer {
+    background-color: black;
+    color: rgb(185, 184, 184);
+    margin-top: 20px;
+}
+
+footer a {
+    color: rgba(132, 168, 132, 0.356);
+}
+
+
+
+div .pdetail a{
+    border-radius: 100px;
+}

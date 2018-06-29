@@ -1,0 +1,33 @@
+table{
+    font-family: 'Londrina Solid', cursive;
+}
+
+
+div .pdetail p{
+    color: rgb(46, 44, 44);
+}
+
+
+
+div .pdetail button{
+    background-color: #777;
+    border-color: #777;border-radius: 0px;
+}
+
+div form button:hover{
+    background-color: black;
+    border-color:black;
+    cursor: pointer;
+}
+
+ div form a:hover{
+    background-color: aqua;
+    color: white;
+    border-radius: 100px;
+    border-color: aqua;
+
+}
+
+div form a{
+    border-radius: 100px;
+}

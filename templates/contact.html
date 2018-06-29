@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+{% block search %}{% endblock %}
+
+
+{% block content %}
+        <h4 class="text-center mt-4"> Contact Us </h4>
+        
+<div class="pman container mt-4" id="js-alert">
+    <div class="row" id="mecon">
+        <div class="col-lg-6 col-md-6 col-sm-12" id="contact">
+            
+    {% include 'includes/contact_update.html' %}
+        </div>
+        <div class="mt-5 col-lg-6 col-md-6 col-sm-12">
+            <p class="text-center mt-5">You can Reach Us Below at:</p>
+            <address class="text-center">
+                        <strong>Froxine Companies Ltd</strong><br>
+                        Favour Avenue, Km.6 Road Igbo-Etche Road<br>
+                        PortHarcout, Rivers State<br><br>
+                        Help Lines: +23456784756 , +23490867234
+            </address><br>
+
+            <p class="text-center"><strong>Social Links</strong></p>
+            <p class="text-center">
+                    <a class="btn rounded-0 fa fa-twitter footer-socialicon" target="_blank" href="https://twitter.com/" style="color:rgb(56, 170, 247);"></a>
+                    <a class="btn fa fa-facebook footer-socialicon" target="_blank" href="https://www.facebook.com/" style="color:rgb(26, 26, 214);"></a>
+                    <a class="btn fa fa-google-plus footer-socialicon" target="_blank" href="https://plus.google.com/" style="color:rgb(199, 12, 12);"></a>
+                    <a class="btn fa fa-linkedin footer-socialicon" target="_blank" href="https://plus.google.com/" style="color:rgb(69, 69, 231);"></a>
+            </p>
+
+        </div>
+    </div>
+
+
+
+
+  
+
+</div>
+
+
+
+{% endblock %}

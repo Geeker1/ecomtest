@@ -1,0 +1,17 @@
+{% if cart.coupon %}
+<tr class="text-light" style="background-color:rgb(23, 26, 29);" id="coupon">
+    <td class="align-middle">Subtotal</td>
+    <td colspan="3" class="align-middle"></td>
+    <td class="align-middle">₦{{ cart.get_total_price }}</td>
+</tr>
+<tr id="coupon">
+    <td>
+        "Froxine Weekly" coupon
+        ({{ cart.coupon.discount }}% off)
+    </td>
+    <td colspan="3"></td>
+    <td class="align-middle">
+        - ₦{{ cart.get_discount|floatformat:"2" }}
+    </td>
+</tr>
+{% endif %}

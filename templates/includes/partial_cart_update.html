@@ -1,0 +1,12 @@
+{% with total_items=cart|length %} {% if cart|length > 0 %}
+                <a class="nav-link" href="{% url 'cart:cart_detail' %}">
+                    <i class="fa fa-shopping-cart" style="color:rgb(243, 236, 236);" title="Edit"></i>
+                    <sup style="color:rgb(115, 255, 0);">[{{ total_items }}]</sup>
+                </a>
+
+                {% else %}
+                <a class="nav-link" href="{% url 'cart:cart_detail' %}">
+                    <i class="fa fa-shopping-cart" style="color:rgb(243, 236, 236);" title="Edit"></i>
+                    <sup style="color:red;">[0]</sup>
+                </a>
+                {% endif %} {% endwith %}

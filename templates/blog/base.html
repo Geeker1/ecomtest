@@ -1,0 +1,212 @@
+{% load static %}<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ecom</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" media="screen" type="text/css" href="{% static 'css/bootstrap.min.css' %}" >
+    
+    <link rel="stylesheet" media="screen" type="text/css"  href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" media="screen" type="text/css" href="{% static 'css/offcanvas.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Solid:300" rel="stylesheet">
+    <link rel="stylesheet" media="screen" type="text/css"  href="{% static 'css/ecom.css' %}">
+    <link rel="stylesheet" media="screen" type="text/css" href="{% static 'css/offcanvas.css' %}">
+    {% block stylesheet %}{% endblock %}
+    <style>
+            footer {
+                background-color: black;
+                color: rgb(185, 184, 184);
+                margin-top:20px;
+            }
+            
+            footer div .social a:hover{
+                background-color: aqua;
+                color: white;
+                border-radius: 100px;
+                border-color: aqua;
+            
+            }
+            
+            footer a{
+                color:rgba(132, 168, 132, 0.356);
+            }
+        
+        .nav-link{
+            font-size: 17px;
+        }
+            </style>
+</head>
+
+
+
+<body style="background-color:rgb(240, 240, 240);">
+    {% block body %}
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand text-uppercase" id="nav" href="{% url 'home' %}">Froxine
+            <small>.com</small>
+        </a>
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">
+                            <span class="align-middle float-left pr-2"><i class="fa fa-home d-md-none" style="color:white;font-size:15px;" title="Edit"></i></span>
+                        Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle-no-caret clearfix" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="align-middle float-left pr-2"><i class="fa fa-dot-circle-o d-md-none" style="color:white;font-size:15px;" title="Edit"></i></span>
+                        Categories
+                            <span class="align-middle float-right"><i class="fa fa-plus d-md-none" style="color:white;font-size:10px;" title="Edit"></i></span>
+                    </a>
+                    <div class="bg-dark dropdown-menu dropdown" style="width:100%;" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="#">
+                                <span class="align-middle float-left pr-1"><i class="fa fa-map-pin d-md-none" style="color:white;font-size:14px;" title="Edit"></i></span>
+                            Fashion
+                            <span class="fb" ></span>
+                        </a>
+                        <a class="dropdown-item" href="#">
+                                <span class="align-middle float-left pr-1"><i class="fa fa-mobile d-md-none" style="color:white;font-size:15px;" title="Edit"></i></span>
+                            Electronics</a>
+                        <a class="dropdown-item pr-2" href="#">
+                                <span class="align-middle float-left pr-1"><i class="fa fa-diamond d-md-none" style="color:white;font-size:10px;" title="Edit"></i></span>
+                            Jewelry Accessories</a>
+                        <a class="dropdown-item" href="#">
+                                <span class="align-middle float-left pr-1"><i class="fa fa-square d-md-none" style="color:white;font-size:12px;" title="Edit"></i></span>
+                            Health and Beauty</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'blog:post_list' %}">
+                            <span class="align-middle float-left pr-2"><i class="fa fa-info-circle d-md-none" style="color:white;font-size:15px;" title="Edit"></i></span>
+                        Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">
+                            <span class="align-middle float-left pr-2"><i class="fa fa-support d-md-none" style="color:white;font-size:15px;" title="Edit"></i></span>
+                        Contact</a>
+                </li>
+                
+            </ul>
+            
+            
+
+
+        </div>
+        <ul class="navbar-nav">
+                <li class="nav-item">
+                    {% with total_items=cart|length %}
+                    {% if cart|length > 0 %}
+                        <a class="nav-link" href="{% url 'cart:cart_detail' %}">
+                            <i class="fa fa-shopping-cart" style="color:rgb(243, 236, 236);" title="Edit"></i>
+                            <sup style="color:rgb(115, 255, 0);">[{{ total_items }}]</sup>
+                        </a>
+                    
+                    {% else %}
+                    <a class="nav-link" href="{% url 'cart:cart_detail' %}">Cart
+                            <i class="fa fa-shopping-cart" style="color:rgb(243, 236, 236);" title="Edit"></i>
+                            <sup style="color:red;">[0]</sup>
+                        </a>
+                    {% endif %}
+                    {% endwith %}
+         </li>
+                
+            </ul>
+            
+    </nav>
+
+    {% block header %}
+    {% endblock %}
+
+
+
+    
+    {% block content %}
+    {% endblock %}
+    
+
+    
+    <style>
+        footer {
+            background-color: black;
+            color: rgb(185, 184, 184);
+            margin-top:20px;
+        }
+        
+        footer div .social a:hover{
+            background-color: aqua;
+            color: white;
+            border-radius: 100px;
+            border-color: aqua;
+        
+        }
+        
+        footer a{
+            color:rgba(132, 168, 132, 0.356);
+        }</style>
+
+
+    
+    {% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <div class="row p-3">
+                <div class="col-lg-5 mb-3">
+                    <h5>Subscribe to our Newsletter</h5>
+                    <form class="search form-inline">
+                            <input class="w-100 form-control" style="border-radius:0px;font-size:13px;" type="text" placeholder="Put in your email address here....">
+                    </form>
+                    <p class="text-center text-light"><a class="mt-2 btn btn-primary" style="border-radius:1px;">Submit</a></p>
+                    
+                </div>
+                <div class="col-lg-7">
+                    <h5>What We Are</h5>
+                    <p>We are an Ecommerce company dedicated to satisfying your consumating needs</p>
+                    <p>In here we sell all kinds of accesories...from home and fashion items to health and beauty items
+                        We are te best...
+                    </p>
+                    <p>We have come to show you the way to breaking hearts all round the globe</p>
+                    <p>Welcome to the scabbard nation!!!</p>
+                </div>
+                
+            </div>
+            <div class="row p-3">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"><p class="text-center">
+                        <a class="btn rounded-0 fa fa-twitter footer-socialicon" target="_blank" href="https://twitter.com/" style="color:rgb(56, 170, 247);"></a>
+                        <a class="btn fa fa-facebook footer-socialicon" target="_blank" href="https://www.facebook.com/" style="color:rgb(21, 78, 184);"></a>
+                        <a class="btn fa fa-google-plus footer-socialicon" target="_blank" href="https://plus.google.com/" style="color:rgb(199, 12, 12);"></a>
+                        <a class="btn fa fa-linkedin footer-socialicon" target="_blank" href="https://plus.google.com/" style="color:rgb(69, 69, 231);"></a>
+                </p></div>
+                <div class="col-md-4"></div>
+            </div>
+
+        </div>
+    </footer>
+    {% endblock %}
+
+    {% endblock body %}
+
+    
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/offcanvas.js' %}"></script>
+
+
+
+</body>
+
+</html>

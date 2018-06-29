@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+    <main role="main" class="container mt-5">
+      <div class="row mt-5" style="height:680px;">
+        <div class="col-md-8 blog-main">
+          
+          <div class="container">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.created }} by <strong style="font-size:20px;">Froxine Admin</strong></p>
+            
+            <img src="{% static 'img/chrix.jpg' %}" style="height:100%;width:100%;">
+          
+
+            <p style="font-size:17px;">{{ post.body }}</p>
+          </div>
+
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+         
+
+          <div class="p-3 mt-5">
+            <h4 class="font-italic">Archives</h4>
+            <ol class="list-unstyled mb-0">
+              <li><a href="#">July 2018</a></li>
+              <li><a href="#">June 2018</a></li>
+              
+            </ol>
+          </div>
+
+        </aside>
+
+      </div>
+
+    </main>
+
+ 
+{% endblock %}

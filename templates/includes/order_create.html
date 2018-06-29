@@ -1,0 +1,5 @@
+<form action="." method="post" class="js-order-create" novalidate>
+    {% include 'includes/form.html' %}
+    <p class="text-center"><button type="submit" class="btn btn-primary btn-block">Place order</button></p>
+    {% csrf_token %}
+</form>

@@ -1,0 +1,26 @@
+body{
+    background-image: url('../img/led.jpg');
+}
+.logo a{
+    color: rgba(250, 242, 242, 0.9);
+}
+
+.card-footer,button{
+    font-family: 'Londrina Solid', cursive;
+}
+
+
+.logo a:hover,
+.logo a:active {
+    text-decoration: none;color:white;
+
+}
+
+div .card .card-body{
+    background-color: rgb(254, 254, 255);
+}
+
+div .card{
+    border-radius: 0px;
+}
+

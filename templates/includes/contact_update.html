@@ -1,0 +1,5 @@
+<form method="post" action="{% url 'contact_save' %}" class="js-contact-me" novalidate>
+    {% csrf_token %}
+    {% include 'includes/form.html' %}
+    <button type="submit" class="btn btn-success btn-block">Submit</button>
+</form>

@@ -1,0 +1,612 @@
+h3,
+h5,
+h4,
+h6 {
+    font-family: 'Londrina Solid', cursive;
+}
+
+footer {
+    background-color: black;
+    color: rgb(185, 184, 184);
+    margin-top: 20px;
+}
+
+footer div .social a:hover {
+    background-color: aqua;
+    color: white;
+    border-radius: 100px;
+    border-color: aqua;
+
+}
+
+button:focus{
+    outline: none !important;box-shadow: none !important;
+}
+.btn:focus{
+    outline: none !important;box-shadow: none !important;
+}
+
+footer a {
+    color: rgba(132, 168, 132, 0.356);
+}
+
+.nav-link {
+    font-size: 17px;
+}
+
+.nav-link,
+.navbar-brand {
+    font-family: 'Londrina Solid', cursive;
+}
+
+p {
+    font-family: 'Londrina Solid', cursive;
+}
+
+div .btn-danger:hover, .btn-danger:active, .btn-danger:focus {
+    color: #ffffff !important;
+    background-color: #1F2838 !important;
+    border-color: navajowhite !important;
+    outline: none !important;
+  }
+
+div .centered {
+    width: 100%;
+}
+
+.subtitle {
+    margin: 0 0 2em 0;
+}
+
+.fancy {
+    overflow: hidden;
+    text-align: center;
+}
+
+.fancy span {
+    position: relative;
+}
+
+.fancy span:before,
+.fancy span:after {
+    content: "";
+    position: absolute;
+    border-bottom: 1px solid rgb(124, 123, 123);
+    border-top: 1px solid rgb(131, 129, 129);
+    width: 600px;
+    height: 7px;
+    top: 50%;
+    margin-top: floor(-7px / 2);
+}
+
+.fancy span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.fancy span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+
+div .detail button {
+    background-color: #777;
+    border-color: #777;
+    border-radius: 0px;
+}
+
+div .detail button:hover {
+    background-color: black;
+    border-color: black;
+    cursor: pointer;
+}
+
+/* Carousel base class */
+
+.carousel {
+    margin-bottom: 1rem;
+    font-size: 14px;
+}
+
+/* Since positioning the image, we need to help out the caption */
+
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+    font-size-adjust: inherit;
+}
+
+/* Declare heights because of positioning of img element */
+
+.carousel-item {
+    height: 32rem;
+    background-color: #777;
+}
+
+.carousel-item>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 32rem;
+}
+
+.container .products {
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+div .container .products .detail:hover {
+    box-shadow: 2px 2px 3px 3px rgb(209, 202, 202);
+    cursor: pointer;
+}
+
+div .detail {
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    background-color: white;
+}
+
+div .detail h5 {
+    font-size: 14px;
+}
+
+div .mid-1 {
+    height: 20px;
+}
+
+div .detail p {
+    font-size: 12px;
+}
+
+div .detail img {
+    width: 100%;
+    height: 55%;
+}
+
+div .detail div {
+    height: 45%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+div .detail div small {
+    text-decoration: line-through;
+}
+
+main .cat .products {
+    opacity: 1.5;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+main .cat .products a {
+    color: white;
+}
+
+main .cat .products a:hover {
+    color: rgb(163, 77, 77);
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width:320px) {
+    div .detail {
+        height: 200px;
+    }
+    a .linking{
+        width: 90%;
+    }
+    .container .cat .products {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        margin-bottom: 0px;
+    }
+    .container .products {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+    div .pro .products {
+        margin-bottom: 0px;padding-left: 3px;padding-right: 3px;
+    }
+    div .detail img {
+        height: 60%;
+    }
+    div .detail div {
+        height: 40%;
+        padding-top: 15px;
+    }
+    div .detail div .title {
+        font-size: 9px;
+        -ms-text-size-adjust: auto;
+    }
+    div .detail div p {
+        margin-left: 5px;
+        font-size: 8px;
+    }
+    main .cat div .detail img {
+        height: 100%;
+    }
+    main .cat div .detail {
+        height: 80px;
+    }
+    div .house .slide img {
+        width: 100%;
+    }
+    div .house .slide {
+        position: relative;
+    }
+    div .feat .house {
+        height: 100%;
+        width: 100%;
+    }
+    div .det {
+        position: absolute;
+        top: 200px;
+        right: 100px;
+    }
+    .scrolling {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+    .linking {
+        text-decoration: none;
+        color: #888;
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+    }
+    div .empty {
+        width: 0%;
+    }
+    div .form {
+        width: 70%;
+    }
+    div .acc {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width:320px) and (max-width:465px) {
+    div .detail {
+        height: 200px;
+        font-size: 10px;
+    }
+    div .detail img {
+        height: 55%;
+    }
+    .container .products {
+        width: 50%;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+    .container .made{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+    div .empty {
+        width: 0%;
+    }
+
+    a .linking{
+        width: 90%;
+    }
+
+    div .form {
+        width: 70%;
+    }
+
+    main .cat .products {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    div .acc {
+        width: 30%;
+    }
+    div .add {
+        display: none;
+    }
+    div .pro .products {
+        margin-bottom: 0px;padding-left: 3px;
+        padding-right: 3px;padding-bottom: 5px;
+    }
+    div .detail div .title {
+        font-size: 11px;
+    }
+    main .cat div .detail img {
+        height: 100%;
+    }
+    main .cat div .detail {
+        height: 80px;
+    }
+    div .house .slide img {
+        width: 100%;
+    }
+
+    div .content{
+        width:90%;
+    }
+    div .feat .house {
+        height: 100%;
+        width: 100%;
+    }
+    div .det {
+        position: absolute;
+        top: 80px;
+        right: 70px;
+    }
+
+
+    .scrolling {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+
+
+    .linking {
+        text-decoration: none;
+        color: #888;
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+    }
+}
+
+
+
+@media screen and (min-width:425px) and (max-width:768px) {
+    div .detail {
+        height: 200px;
+        width: 100%;
+    }
+    div .pro .products {
+        width: 50%;
+    }
+    main .cat div .detail img {
+        height: 100%;
+    }
+    div .empty {
+        width: 33.3%;
+    }
+
+    a .linking{
+        width: 90%;
+    }
+
+    div .form {
+        width: 33.3%;
+    }
+    div .acc {
+        width: 33.3%;
+    }
+    main .cat div .detail {
+        height: 150px;
+    }
+    div .add {
+        display: none;
+    }
+    .scrolling {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+    .linking {
+        text-decoration: none;
+        color: #888;
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+    div .detail {
+        height: 200px;
+        width: 100%;
+    }
+    div .pro {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    div .add {
+        display: none;
+    }
+    div .pro .products {
+        width: 25%;
+    }
+    div .detail .title {
+        font-size: 12px;
+    }
+    div .detail div p {
+        margin-left: 5px;
+    }
+    main .cat div .detail img {
+        height: 100%;
+    }
+    main .cat div .detail {
+        height: 80px;
+    }
+    div .feat .house {
+        height: 100%;
+        width: 25%;
+    }
+    div .house .slide {
+        position: relative;
+    }
+    div .empty {
+        width: 33.3%;
+    }
+    div .form {
+        width: 33.3%;
+    }
+    div .acc {
+        width: 33.3%;
+    }
+    div .house .slide img {
+        width: 100%;
+    }
+    div .feat {
+        width: 100%;
+        padding-left: 35px;
+        height: 100%;
+    }
+    div .feat .linking {
+        display: inline-block;
+        height: 100%;
+        width: 24%;
+    }
+    div .house .slide {
+        position: relative;
+        width: 400%;
+    }
+    div .fancy {
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (min-width:1024px) and (max-width:1440px) {
+    div .detail div p {
+        margin-left: 10px;
+    }
+    div .pro {
+        width: 100%;
+        padding: 0px
+    }
+    div .pro .detail {
+        position: relative;
+        height: 260px;
+        width: 100%;
+        padding-bottom: 15px;
+    }
+    div .detail div .title {
+        font-size: 13px;
+    }
+
+    div .detail div .price {
+        padding-bottom: 15px;
+    }
+    div .pro .products {
+        width: 25%;
+        padding-right: 5px;
+    }
+    div .detail img {
+        height: 68%;
+    }
+    div .detail div {
+        height: 32%;
+    }
+    main .cat div .detail img {
+        height: 100%;
+    }
+    div .pro {
+        padding-left: 45px;
+        padding-right: 45px;
+    }
+    main .cat div .detail {
+        height: 100px;
+    }
+    div .add {
+        position: absolute;
+        top: 215px;
+        right: 65px;
+    }
+    div .house .slide img {
+        width: 100%;
+    }
+    div .feat {
+        width: 100%;
+        padding-left: 35px;
+    }
+    div .feat .linking {
+        display: inline-block;
+        height: 100%;
+        width: 24%;
+    }
+    div .house .slide {
+        position: relative;
+    }
+    div .empty {
+        width: 33.3%;
+    }
+    div .form {
+        width: 33.3%;
+    }
+    div .acc {
+        width: 33.3%;
+    }
+}
+
+@media screen and (min-width:1440px) and (max-width:1990px) {
+   
+    div .pro {
+        width: 100%;
+        padding: 0px;
+    }
+    div .pro .detail {
+        position: relative;
+        height: 260px;
+        width: 100%;
+        padding-bottom: 15px;
+    }
+    div .detail div .title {
+        font-size: 13px;
+    }
+    div .pro .products {
+        width: 25%;
+        padding-right: 5px;
+    }
+    main .cat div .detail img {
+        height: 100%;
+    }
+    div .pro {
+        padding-left: 45px;
+        padding-right: 45px;
+    }
+    main .cat div .detail {
+        height: 100px;
+    }
+    div .house .slide img {
+        width: 100%;
+    }
+    div .feat {
+        width: 100%;
+        padding-left: 35px;
+    }
+    div .feat .linking {
+        display: inline-block;
+        height: 100%;
+        width: 24%;
+    }
+    div .house .slide {
+        position: relative;
+    }
+    div .empty {
+        width: 33.3%;
+    }
+    div .form {
+        width: 33.3%;
+    }
+    div .acc {
+        width: 33.3%;
+    }
+}
