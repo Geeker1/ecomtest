@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'orders',
     'coupons',
     'sendmail',
+    'contact',
 ]
 
 MIDDLEWARE = [
@@ -146,4 +147,12 @@ LOGOUT_REDIRECT_URL = 'home'
 CART_SESSION_ID = 'cart'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+#Apply this to setup the redis backend
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 1
+
+
+
 

@@ -1,0 +1,197 @@
+{% extends 'base.html' %}{% load static %}
+{% block header %}
+
+    <header class="mt-5">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" style="height:450px;">
+                <div class="carousel-item active align-middle" style="height:100%;">
+                    <img class="first-slide img-responsive" style=" height:100%;" src="https://www.riverbed.com/image/fpo/homepage/reinventing-apm-for-digital-era-webinar-hp-hero.jpg"
+                        alt="First slide">
+                    <div class="container">
+                        <div class="carousel-caption mb-5">
+                            <h4>Froxine.com</h4>
+                            <p>Fast Delivery of your products....</p>
+                            <p>
+                                <a class="btn btn-md btn-primary" href="{% url 'signup' %}" role="button">Login/Signup</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" style="height:100%;">
+                    <img class="second-slide img-responsive" src="http://www.paperlabeltech.com/wp-content/uploads/2017/10/argo-homepage-success-stories-banner.jpg"
+                        alt="Second slide">
+                    <div class="container">
+                        <div class="carousel-caption mb-5">
+                            <h4>Froxine.com</h4>
+                            <p>Begin your shopping journey </p>
+                            <p>
+                                <a class="btn btn-md btn-primary" href="{% url 'blog:post_list' %}" role="button">Learn more</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" style="height:100%;">
+                    <img class="third-slide img-responsive" src="https://www.riverbed.com/image/fpo/homepage/reinventing-apm-for-digital-era-webinar-hp-hero.jpg"
+                        alt="Third slide">
+                    <div class="container">
+                        <div class="carousel-caption mb-5">
+                            <h4>Froxine.com</h4>
+                            <p>Pick out of our many collections</p>
+                            <p>
+                                <a class="btn btn-md btn-primary" href="#" role="button">Browse gallery</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </header>
+    {% endblock %}{% if messages %}
+    
+    <ul class="messages">
+        {% for message in messages %}
+        <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    
+    {% endif %}
+
+    {% block content %}
+
+    <div id="snackbar">Added Successfully</div>
+<style>
+    main .animated{
+        animation-duration: 3s;
+    }
+    
+
+</style>
+
+    <main class="container" style="height:100%;">
+        <div class="cat row mb-4" style="padding:0px;height:100%;">
+            {% for cat in categories %}
+            <div class="products col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="animated infinite pulse detail">
+                    <img class="img-responsive" src="{{ cat.urlimage }}" alt="">
+                    <div class="centered"><h6><a href="{% url 'category' cat.slug %}">{{ cat.name }}</a></h6></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+
+
+        <div class="trends row" style="padding:0px;height:100%;">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="height:100%;">
+                <h3 class="animated infinite pulse" style="text-align:center;">Hot Deals Just For You</h3>
+                <div class="pro row scroll-animations" id="detail">
+
+
+
+                    {% for cat in hot %}
+                    <div class="products">
+                        <div class="animated detail" id="endme">
+                            <a href="{{ cat.get_absolute_url }}"><img class="img-responsive" src="{% if cat.image %}{{ cat.image.url }}{% else %}
+                                {{ cat.urlimage }}{% endif %}" alt=""></a>
+                            <h5 class="title py-1 mb-0"><a href="{{ cat.get_absolute_url }}" style="color:black;"> {{ cat.name }}</a></h5>
+                            <p class="price mt-1 mb-0">₦{{ cat.price }}
+                                <small style=" text-decoration:line-through;">₦{{ cat.slashed }}</small>
+                            </p>
+                            <form action="{% url 'cart:cart_add' cat.id %}" method="post" class="js-book-create-form">
+                                <p class="invisible mt-0 mb-0" style="width:1px;height:1px;">{{ cart_product_form.quantity }}</p>
+                                <p class="mt-0 mb-0">{{ cart_product_form.update }}</p>
+                                {% csrf_token %}
+                                {% include 'includes/form.html' %}
+                                <p class="text-center">
+                                    <button type="submit" value="Add to cart" class="btn cart-b btn-danger animated pulse" id="boom">Add to Cart</button>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="featured row">
+
+            <div class="col-lg-12 col-md-12 col-sm-12" style="height:100%;">
+            <h4 class="subtitle fancy mb-2 mt-2 animated infinite pulse" style="text-align:center"><span>Featured Products</span></h4>
+            <div class="feat row scroll-anime">
+
+                <div class="scrollmenu scrolling">
+                    <div class="content">
+                        {% for some in feat %}
+                        <a class="linking animated" href="{{ some.get_absolute_url }}" style="height:100%;">
+                            <div class="house">
+                                <div class="slide">
+                                    <img class="img-responsive" style="height:190px;" src="{{ some.image.url }}" alt="">
+                                </div>
+                            </div>
+                        </a>
+                        {% endfor %}
+                        
+                        
+                    </div>
+                </div>
+
+
+
+            </div></div> </div>
+
+            
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <section class="container-fluid mt-4 mb-0 text-center text-white pb-2 services" style="background-color: rgb(46, 58, 68);">
+        <div class="container mt-3 pt-4"><h3 class="text-center text-white animated infinite rubberBand">Our Services</h3></div>
+        
+        <div class="container pt-4">
+            <div class="row justify-content-center scrollinus">
+                <div class="col-lg-4 col-md-4 col-sm-12 text-center text-white animated deli">
+                    <img class="img-responsive img-rounded border-dark" style="height: 100px;width: 100px;" src="{% static 'img/Shipped.svg' %}">
+                    <h6 class="mt-2">Fast Delivery of your products</h6>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 text-center text-white animated deli">
+                        <img class="img-responsive img-rounded border-dark" style="height: 100px;width: 100px;" src="{% static 'img/pay.svg' %}">
+                        <h6 class="mt-2">Efficient Payment System and Order Tracking</h6>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 text-center text-white animated deli">
+                            <img class="img-responsive img-rounded border-dark" style="height: 100px;width: 100px;" src="{% static 'img/smartphone-call.svg' %}">
+                            <h6 class="mt-2">Responsive Customer Care Service</h6>
+                        </div>
+                        <div class="col-lg-8 mb-3"><h6 class="mt-4">We are here for you..working hand in hand to deal with your daily needs and issues that may arise in using our service</h6></div>
+                        
+
+            </div>
+        </div>
+        
+
+
+    </section>
+
+    {% endblock %}

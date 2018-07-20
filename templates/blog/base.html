@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Londrina+Solid:300" rel="stylesheet">
     <link rel="stylesheet" media="screen" type="text/css"  href="{% static 'css/ecom.css' %}">
     <link rel="stylesheet" media="screen" type="text/css" href="{% static 'css/offcanvas.css' %}">
+    <link rel="stylesheet" media="screen" type="text/css" href="{% static 'css/animate.css' %}">
     {% block stylesheet %}{% endblock %}
     <style>
             footer {
@@ -63,7 +64,7 @@
                         Home
                         <span class="sr-only">(current)</span>
                     </a>
-                </li>
+                </li> 
                 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle-no-caret clearfix" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -94,7 +95,7 @@
                         Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact' %}">
+                    <a class="nav-link" href="{% url 'contact:contact' %}">
                             <span class="align-middle float-left pr-2"><i class="fa fa-support d-md-none" style="color:white;font-size:15px;" title="Edit"></i></span>
                         Contact</a>
                 </li>

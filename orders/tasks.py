@@ -13,6 +13,9 @@ def order_created(order_id):
     order = Order.objects.get(id=order_id)
     subject = 'Order nr. {}'.format(order.id)
     message = 'Hello {},\n\nYou have successfully placed an order.\
-    Your order id is {}.'.format(order.first_name,order.id)
+    Your order id is {}.\n we will get back to you in 12 hours.'.format(order.first_name,order.id)
     mail_sent = send_mail(subject,message,'admin@Frozine.com',[order.email])
-    return mail_sent 
+    return mail_sent
+
+
+

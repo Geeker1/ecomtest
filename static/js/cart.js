@@ -15,10 +15,11 @@ $(function () {
             $("#detail #sub").html(data.html_sub_me);
             $("#detail #coupo").html(data.html_coupo_me);
             $("#mobilee #mobile").html(data.html_mobile_me);
+            $('#boom').addClass('animated bounceOutLeft');
             var x = document.getElementById("snackbar");
             x.className = "show";
             setTimeout(function(){x.className = x.className.replace("show","");},3500);
-
+            
           }
           else {
             alert("Try again!!");
@@ -27,6 +28,7 @@ $(function () {
       });
       return false;
     };
+
 
     var contactForm = function () {
       var form = $(this);
@@ -37,12 +39,17 @@ $(function () {
         dataType: 'json',
         success: function (data) {
           if (data.form_is_valid) {
-            alert('Your Request has been sent!!');
             $("#mecon #contact").html(data.html_contact_form);
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            setTimeout(function(){x.className = x.className.replace("show","");},5500);
             
           }
           else {
             $("#mecon #contact").html(data.html_contact_form);
+            var x = document.getElementById("errore");
+            x.className = "show";
+            setTimeout(function(){x.className = x.className.replace("show","");},3000);
           }
         }
       });
@@ -58,10 +65,15 @@ $(function () {
         dataType: 'json',
         success: function (data) {
           if (data.form_is_valid) {
-            alert('Successful SignUp!! Now you will be redirected to the home page...');
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            setTimeout(function(){x.className = x.className.replace("show","");},5500);
           }
           else {
             $("#log_me #skom").html(data.html_contact_form);
+            var x = document.getElementById("errore");
+            x.className = "show";
+            setTimeout(function(){x.className = x.className.replace("show","");},3000);
           }
         }
       }).done(function (data){
@@ -82,12 +94,19 @@ $(function () {
         dataType: 'json',
         success: function (data) {
           if (data.form_is_valid) {
-            alert("Good!");
             $("#order_me #js_order").html(data.html_order_form);
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            setTimeout(function(){x.className = x.className.replace("show","");},5500);
+            
             
           }
           else {
             $("#order_me #js_order").html(data.html_order_form);
+            var x = document.getElementById("errore");
+            x.className = "show";
+            setTimeout(function(){x.className = x.className.replace("show","");},5500);
+            
           }
         }
       }).done(function (data){
@@ -114,7 +133,7 @@ $(function () {
             $("#mobilee #mobile").html(data.html_mobile_me);
             var x = document.getElementById("snackbar");
             x.className = "show";
-            setTimeout(function(){x.className = x.className.replace("show","");},2500);
+            setTimeout(function(){x.className = x.className.replace("show","");},5500);
 
           }
           else {

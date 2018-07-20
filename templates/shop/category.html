@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block content %}<div id="snackbar">Added Successfully</div>
+<style>
+    main .animated,
+    section .animated{
+        animation-duration: 3s;
+    }
+</style>
+    <main class="container" style="height:100%;margin-top:6rem;">
+            <ol class="breadcrumb arr-right bg-dark w-100 py-2 px-1 mt-2 " style="font-size:13px;">
+
+
+            <li class="breadcrumb-item ">
+                <a href="{% url 'home' %}" class="text-light">Home</a>
+            </li>
+
+
+            <li class="text-light breadcrumb-item active">
+            {{ category.name }}
+            </li>
+
+        </ol>
+
+        <div class="cat row mb-4" style="padding:0px;height:100%;">
+            {% for sub in category.sub_categories.all %}
+                <div class="products col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="animated infinite pulse detail">
+                        <img class="img-responsive" src="{{ sub.urlimage }}" alt="">
+                        <div class="centered"><h6><a href="{% url 'sub_category' sub.category.slug sub.slug %}">{{ sub.name }}</a></h6></div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </main>
+    <div id="snackbar">Added Successfully</div>
+
+    <section class="container">
+
+
+        <div class="trends row" style="padding:0px;height:100%;">
+
+
+            <div class="col-lg-12 col-xs-12 col-sm-12" style="height:100%;">
+                <h4 class="text-center personal animated infinite pulse">{{ category.name }}</h4>
+                <div class="pro row scroll-animations" id="detail">
+
+                    {% for me in category.procats.all %}
+                    <div class="products">
+                        <div class="detail animated">
+                            <a href="{{ me.get_absolute_url }}"><img class="img-responsive" src="{% if me.image %}{{ me.image.url }}{% else %}
+                                {{ me.urlimage }}{% endif %}" alt=""></a>
+
+                            <h5 class="title py-1 mb-0"><a style="color:black;" href="{{ me.get_absolute_url }}">{{ me.name }}</h5></a> 
+                            <p class="price mt-1 mb-0">₦{{ me.price }}
+                                <small style=" text-decoration:line-through;">₦{{ me.slashed }}</small>
+                            </p>
+                            <form action="{% url 'cart:cart_add' me.id %}" method="post" class="js-book-create-form">
+                                <p class="invisible mt-0 mb-0" style="width:1px;height:1px;">{{ cart_product_form.quantity }}</p>
+                                <p class="mt-0 mb-0">{{ cart_product_form.update }}</p>
+                                {% csrf_token %}
+                                {% include 'includes/form.html' %}
+                                <p class="text-center">
+                                    <button type="submit" value="Add to cart" class="btn btn-danger">Add to Cart</button>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+    </section>
+{% endblock %}
+

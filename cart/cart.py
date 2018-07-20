@@ -93,6 +93,7 @@ class Cart(object):
             item['total_price'] = item['price'] * item['quantity']
             yield item
 
+
     def __next__(self):
         if self.index == 0:
             raise StopIteration
@@ -105,6 +106,9 @@ class Cart(object):
         """
         return sum(item['quantity'] for item in self.cart.values())
 
+    def total_price(self):
+        return (Decimal(item['price']) * item['quantity'] for item in self.cart.values())
+
     def get_total_price(self):
         return sum(Decimal(item['price']) * item['quantity'] for item in 
         self.cart.values())
@@ -113,6 +117,9 @@ class Cart(object):
     def clear(self): #remove cart from session
         del self.session[settings.CART_SESSION_ID]
         self.session.modified = True
+
+    def total_price(self):
+        return (item['price'] * item['quantity'] for item in self.cart.values())
         
 
 

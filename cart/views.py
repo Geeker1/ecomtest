@@ -9,6 +9,7 @@ from .forms import CartAddProductForm
 from django.http import HttpResponse, JsonResponse
 from coupons.forms import CouponApplyForm
 from django.template.loader import render_to_string
+from shop.recommender import Recommender
 import json
 
 
@@ -69,6 +70,5 @@ def cart_detail(request):
         )
          
     coupon_apply_form = CouponApplyForm()
-
     return render(request, 'cart/detail.html', {'cart':cart,
     'coupon_apply_form': coupon_apply_form})

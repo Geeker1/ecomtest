@@ -10,6 +10,7 @@ class Category(models.Model):
     db_index = True)
     slug = models.SlugField(max_length = 200, db_index = True)
     urlimage = models.URLField(max_length=250, blank=True, null=True)
+    
 
     class Meta:
         ordering = ('name',)

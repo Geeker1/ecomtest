@@ -6,16 +6,19 @@
 {% block search %}{% endblock %}
 
 
+
 {% block content %}
-        <h4 class="text-center mt-4"> Contact Us </h4>
+        <h4 class="text-center animated zoomIn" style="margin-top:7rem;" > Contact Us </h4>
         
-<div class="pman container mt-4" id="js-alert">
+<div class="pman container mt-4 mb-5" id="js-alert">
+        <div id="snackbar">Your Request has been sent</div>
+        <div id="errore">Please fill in as required</div>
     <div class="row" id="mecon">
         <div class="col-lg-6 col-md-6 col-sm-12" id="contact">
             
     {% include 'includes/contact_update.html' %}
         </div>
-        <div class="mt-5 col-lg-6 col-md-6 col-sm-12">
+        <div class="mt-5 col-lg-6 col-md-6 col-sm-12 animated infinite pulse">
             <p class="text-center mt-5">You can Reach Us Below at:</p>
             <address class="text-center">
                         <strong>Froxine Companies Ltd</strong><br>

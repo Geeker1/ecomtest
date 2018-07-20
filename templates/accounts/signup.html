@@ -1,0 +1,35 @@
+{% extends 'accounts/base_accounts.html' %}
+
+
+{% block content %}
+<div id="snackbar">Successful Signup</div>
+<div id="errore">Please fill in as required</div>
+<div class="container">
+
+    <div class="row justify-content-center" style="margin-top:6rem;" id="log_me" >
+        <div class="col-lg-6 col-md-7 col-sm-12">
+            <div class="card bg-dark my-3">
+                <div class="card-header">
+                        <h4 class="text-center text-light card-title">SignUp</h4>
+
+                </div>
+                <div class="card-body" id="skom" >
+                    {% include 'includes/signup_update.html' %}
+                </div>
+                <div class="card-footer text-center text-light py-4">
+                    Already have an account ?<a href="{% url 'login' %}">Login Here</a>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+{% endblock %}
+
+
+{% block footer %}{% endblock %}

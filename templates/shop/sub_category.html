@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="snackbar">Added Successfully</div>
+<style>
+    main .animated,
+    section .animated{
+        animation-duration: 3s;
+    }
+</style>
+    <main class="container" style="height:100%;margin-top:6rem;">
+            <ol class="breadcrumb arr-right bg-dark w-100 py-2 px-1 mt-2 " style="font-size:13px;">
+
+
+            <li class="breadcrumb-item ">
+                <a href="{% url 'home' %}" class="text-light">Home</a>
+            </li>
+
+            <li class="text-light breadcrumb-item">
+                <a class="text-light" href="{% url 'category' category.slug %}">{{ category.name }}</a>
+                
+            </li>
+
+            <li class="text-light breadcrumb-item active">
+                
+                {{ sub_category.name }}
+            </li>
+
+        </ol>
+
+        <div class="cat row mb-4" style="padding:0px;height:100%;">
+            
+
+            <div class="made col-lg-4 col-md-4 col-sm-6 col-xs-4">
+
+            </div>
+           
+            <div class="made col-lg-4 col-md-4 col-sm-6 col-xs-4">
+                <div class="detail animated infinite pulse">
+                    <img class="img-responsive" src="{{ sub_category.urlimage }}" alt="">
+                    <div class="centered">
+                        <h6 style="color:white;">
+                            {{ sub_category.name }}
+                        </h6>
+                    </div>
+                </div>
+
+            </div>
+            <div class="made col-lg-4 col-md-4 col-sm-6 col-xs-4">
+
+            </div>
+            
+
+        </div>
+
+    </main>
+
+
+
+    <section class="container">
+
+
+        <div class="trends row" style="padding:0px;height:100%;">
+
+
+            <div class="col-lg-12 col-xs-12 col-sm-12" style="height:100%;">
+                <h4 class="text-center personal">{{ sub_category.name }}</h4>
+                
+                <div class="pro row scroll-animations" id="detail">
+                    {% for cat in products %}
+                    <div class="products">
+                        <div class="detail animated">
+                            <a href="{{ cat.get_absolute_url }}"><img class="img-responsive" src="{% if cat.image %}{{ cat.image.url }}{% else %}
+                                {{ cat.urlimage }}{% endif %}" alt=""></a>
+                            <h5 class="title py-1 mb-0"><a style="color:black;" href="{{ cat.get_absolute_url }}">{{ cat.name }}</h5></a>
+                            <p class="price mt-1 mb-0">₦{{ cat.price }}
+                                <small style=" text-decoration:line-through;">₦{{ cat.slashed }}</small>
+                            </p>
+                            <form action="{% url 'cart:cart_add' cat.id %}" method="post" class="js-book-create-form">
+                                <p class="invisible mt-0 mb-0" style="width:1px;height:1px;">{{ cart_product_form.quantity }}</p>
+                                <p class="mt-0 mb-0">{{ cart_product_form.update }}</p>
+                                {% csrf_token %}
+                                {% include 'includes/form.html' %}
+                                <p class="text-center">
+                                    <button type="submit" value="Add to cart" class="btn btn-danger">Add to Cart</button>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    {% endfor %}
+
+                    <div id="snackbar">Added Successfully</div>
+
+
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+    </section>
+
+{% endblock %}

@@ -5,23 +5,23 @@ h6 {
     font-family: 'Londrina Solid', cursive;
 }
 
-footer {
-    background-color: black;
-    color: rgb(185, 184, 184);
-    margin-top: 20px;
+.animated{
+    animation-duration: 3s;
 }
 
-footer div .social a:hover {
-    background-color: aqua;
-    color: white;
-    border-radius: 100px;
-    border-color: aqua;
 
+
+
+
+div .detail:hover{
+    background-color: rgb(104, 105, 105);color: white;
 }
 
 button:focus{
     outline: none !important;box-shadow: none !important;
 }
+
+
 .btn:focus{
     outline: none !important;box-shadow: none !important;
 }
@@ -46,7 +46,7 @@ p {
 div .btn-danger:hover, .btn-danger:active, .btn-danger:focus {
     color: #ffffff !important;
     background-color: #1F2838 !important;
-    border-color: navajowhite !important;
+    border-color: #1F2838 !important;
     outline: none !important;
   }
 
@@ -99,6 +99,7 @@ div .detail button:hover {
     background-color: black;
     border-color: black;
     cursor: pointer;
+    outline-color: none;
 }
 
 /* Carousel base class */
@@ -110,11 +111,7 @@ div .detail button:hover {
 
 /* Since positioning the image, we need to help out the caption */
 
-.carousel-caption {
-    bottom: 3rem;
-    z-index: 10;
-    font-size-adjust: inherit;
-}
+
 
 /* Declare heights because of positioning of img element */
 
@@ -198,10 +195,29 @@ main .cat .products a:hover {
     transform: translate(-50%, -50%);
 }
 
+
+/* FOOTER */
+footer {
+    background-color: black;
+    color: rgb(185, 184, 184);
+    margin-top: 20px;
+}
+
+footer div .social a:hover {
+    background-color: aqua;
+    color: white;
+    border-radius: 100px;
+    border-color: aqua;
+
+}
+/* MEDIA QUERIES FOR ALL SCREEN SIZES */
 @media screen and (max-width:320px) {
     div .detail {
         height: 200px;
     }
+
+    
+
     a .linking{
         width: 90%;
     }
@@ -285,6 +301,7 @@ main .cat .products a:hover {
         height: 200px;
         font-size: 10px;
     }
+    
     div .detail img {
         height: 55%;
     }
@@ -301,6 +318,19 @@ main .cat .products a:hover {
     }
     div .empty {
         width: 0%;
+    }
+
+    .divlow {
+        border-bottom: 1px solid #dee2e6 !important;
+      }
+
+    section .services{
+        height:750px;
+    }
+
+    section div .deli{
+        margin-top:50px;
+        margin-bottom:100px;
     }
 
     a .linking{
@@ -390,6 +420,8 @@ main .cat .products a:hover {
     a .linking{
         width: 90%;
     }
+
+    
 
     div .form {
         width: 33.3%;
@@ -518,6 +550,30 @@ main .cat .products a:hover {
     main .cat div .detail img {
         height: 100%;
     }
+
+    .dropdown-menu.extended {
+
+        max-width: 300px !important;
+    
+        min-width: 160px !important;
+    
+        
+    
+        width: 235px !important;
+    
+        padding: 0;
+    
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.176) !important;
+    
+        border: none !important;
+    
+        border-radius: 4px;
+    
+        -webkit-border-radius: 4px;
+    
+    }
+
+
     div .pro {
         padding-left: 45px;
         padding-right: 45px;
@@ -554,17 +610,50 @@ main .cat .products a:hover {
     div .acc {
         width: 33.3%;
     }
+
 }
 
 @media screen and (min-width:1440px) and (max-width:1990px) {
-   
+
+
+    .dropdown-menu.extended {
+
+        max-width: 300px !important;
+    
+        min-width: 160px !important;
+    
+        
+    
+        width: 235px !important;
+    
+        padding: 0;
+    
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.176) !important;
+    
+        border: none !important;
+    
+        border-radius: 4px;
+    
+        -webkit-border-radius: 4px;
+    
+    }
+
+
+
+    main {
+        padding-right:15px;
+        padding-left:15px;
+        margin-left:0px;margin-right:0px;
+    }
     div .pro {
         width: 100%;
         padding: 0px;
+        padding-left: 20px;
     }
+
     div .pro .detail {
         position: relative;
-        height: 260px;
+        height: 300px;
         width: 100%;
         padding-bottom: 15px;
     }
@@ -578,13 +667,12 @@ main .cat .products a:hover {
     main .cat div .detail img {
         height: 100%;
     }
-    div .pro {
-        padding-left: 45px;
-        padding-right: 45px;
-    }
+    
+
     main .cat div .detail {
         height: 100px;
     }
+
     div .house .slide img {
         width: 100%;
     }
@@ -609,4 +697,10 @@ main .cat .products a:hover {
     div .acc {
         width: 33.3%;
     }
+
+    .cart-b{
+        margin-top:16px !important;
+    }
+
+    
 }

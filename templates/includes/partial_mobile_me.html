@@ -4,7 +4,7 @@
 <div class="col-6  border-bottom text-right border-dark " style="font-size:13px;">
         <p>₦{{ cart.get_total_price }}</p>
 </div>
-<div class="col-6 border-bottom border-dark mt-1">"Frozine Weekly Coupon" ({{ cart.coupon.discount }}% off)
+<div class="col-6 border-bottom border-dark mt-1  animated infinite wobble">"Frozine Weekly Coupon" ({{ cart.coupon.discount }}% off)
 </div>
 <div class="col-6 border-bottom text-right border-dark mt-1">- ₦{{ cart.get_discount|floatformat:"2" }}
 </div>
@@ -13,4 +13,7 @@
 <div class="col-6 text-right mt-1">₦{{ cart.get_total_price_after_discount|floatformat:"2" }}
         
 </div>
+{% else %}
+<div class="col-6"> Total</div>
+<div class="col-6 text-right">₦{{ cart.get_total_price_after_discount|floatformat:"2" }}</div>
 {% endif %}
