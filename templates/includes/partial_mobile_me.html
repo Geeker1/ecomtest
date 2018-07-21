@@ -9,11 +9,13 @@
 <div class="col-6 border-bottom text-right border-dark mt-1">- ₦{{ cart.get_discount|floatformat:"2" }}
 </div>
 
+<div class="row mt-1">
 <div class="col-6 mt-1"> Total</div>
 <div class="col-6 text-right mt-1">₦{{ cart.get_total_price_after_discount|floatformat:"2" }}
         
-</div>
+</div></div>
 {% else %}
+<div class="row mt-2">
 <div class="col-6"> Total</div>
-<div class="col-6 text-right">₦{{ cart.get_total_price_after_discount|floatformat:"2" }}</div>
+<div class="col-6 text-right">₦{{ cart.get_total_price_after_discount|floatformat:"2" }}</div></div>
 {% endif %}

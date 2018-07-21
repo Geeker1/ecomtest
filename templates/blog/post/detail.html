@@ -1,31 +1,41 @@
-{% extends 'blog/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
 
-    <main role="main" class="container mt-5">
-      <div class="row mt-5" style="height:680px;">
+    <main role="main" class="container" style="margin-top: 7rem;">
+      <div class="row mt-5" style="height:100%;">
         <div class="col-md-8 blog-main">
           
           <div class="container">
-            <h2>{{ post.title }}</h2>
+            <h3 class="text-center">{{ post.title }}</h3>
             <p>{{ post.created }} by <strong style="font-size:20px;">Froxine Admin</strong></p>
             
-            <img src="{% static 'img/chrix.jpg' %}" style="height:100%;width:100%;">
+            <img src="{% static 'img/chrix.jpg' %}" style="width:100%;">
           
 
-            <p style="font-size:17px;">{{ post.body }}</p>
+            <p style="font-size:17px;margin-top: 0.75rem;">{{ post.body }}</p>
           </div>
 
         </div>
-
-        <aside class="col-md-4 blog-sidebar">
-         
-
+<style>
+  aside h4{
+    text-align: center;
+    background-color: rgb(210, 210, 211);
+  }
+  ol{
+    border: 5px solid rgb(210, 210, 211);
+  }
+  aside li a{
+    color: rgb(8, 1, 1);
+  }
+  
+</style>
+        <aside class="col-md-4 blog-sidebar mb-3">
           <div class="p-3 mt-5">
             <h4 class="font-italic">Archives</h4>
-            <ol class="list-unstyled mb-0">
-              <li><a href="#">July 2018</a></li>
-              <li><a href="#">June 2018</a></li>
+            <ol class="list-unstyled mb-0 text-center">
+              <li><a href="#">August 2018 : Site Launch</a></li>
+              
               
             </ol>
           </div>

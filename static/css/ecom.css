@@ -9,7 +9,10 @@ h6 {
     animation-duration: 3s;
 }
 
-
+html,
+body {
+  height: 100%;
+}
 
 
 

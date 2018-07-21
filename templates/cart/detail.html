@@ -12,20 +12,20 @@
         animation-delay: 0.5s;
     }
 </style>
-<h4 class="text-center animated zoomIn" style="margin-top:6rem;">Your Shopping Cart</h4>
+<h4 class="text-center animated zoomIn" style="margin-top:7rem;">Your Shopping Cart</h4>
 {% if cart|length > 0 %}
 <div id="snackbar">Updated to Cart</div>
-<div class="container p-0 d-lg-none mt-4" style="margin-bottom:180px;" id="money">
+<div class="container p-0 d-lg-none mt-4" style="margin-bottom:150px;" id="money">
         
         {% for item in cart %}
         {% with product=item.product %}
        
        
-        <div class="row p-2 bg-white animated pulse">
+        <div class="row p-2 border-bottom border-white animated pulse text-white" style="background-color: rgb(26, 37, 48);">
                 
                <div class="col-5 pr-0">
-                <img class="img-responsive animated infinite pulse" style="width:100%;" src="{% if product.image %}
-                {{ product.image.url }} {% else %}{{ product.urlimage }}{% endif %}" alt="">
+                <img class="img-responsive animated infinite pulse" style="width:100%;height:130px;" src="{% if product.image %}
+                {{ product.image.url }} {% else %}{{ product.urlimage }}{% endif %}" alt="Shopping...">
                </div>
                <div class="col-7" style="font-size:14px;">
                    
@@ -47,25 +47,25 @@
             {% endwith %}
             {% endfor %}
 
-                 <div class="row p-2 bg-light border" id="mobilee">
-                     <div class="row p-2 pl-2 border w-100" id="mobile">
+                 <div class="row p-2  text-white border" style="background-color: rgb(26, 37, 48);" id="mobilee">
+                     <div class="col-12 p-2 pl-2 border w-100" id="mobile">
 
                      {% include 'includes/partial_mobile_me.html' %}
 
                     </div>
                         
                  </div>
-                 <div class="col-12 text-center">
-                        <p class="text-center mt-4"> Use a code :</p>
+                 <div class="col-12 text-white text-center" style="background-color: rgb(26, 37, 48);">
+                        <h5 class="text-center mt-2 pt-3"> Use a code :</h5>
                         <form class="" action="{% url 'coupons:apply' %}" method="post" novalidate>
                             {{ coupon_apply_form }}
                             {% include 'includes/form.html' %}
                             {% csrf_token %}
-                            <button class="btn btn-secondary ml-3 mt-2" type="submit">Apply</button>
+                            <button class="btn btn-secondary ml-3 rounded-0" type="submit">Apply</button>
                         </form><br>
                         
-                        <a href="{% url 'home' %}" class="btn rounded-0 btn-primary mt-2 animated zoomIn">Continue shopping</a> 
-                        <a href="{% url "orders:order_create" %}" class="btn rounded-0 btn-md btn-success animated zoomIn mt-2">Checkout</a>
+                        <a href="{% url 'home' %}" class="btn rounded-0 btn-primary mb-2 animated zoomIn">Continue shopping</a> 
+                        <a href="{% url "orders:order_create" %}" class="btn rounded-0 btn-md btn-success animated zoomIn mb-2">Checkout</a>
                  </div>
 
 

@@ -1,16 +1,50 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <title>Cover Template for Bootstrap</title>
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Solid:300" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" media="screen" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
 
-<div class="container bg-dark">
-    <div class="row justify-content-center">
-        <div class="col-lg-7">
-            <p>Hello Error man</p>
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" media="screen" type="text/css" href="{% static 'css/cover.css' %}">
+  </head>
+
+  <body class="text-center">
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <style>
+            main{
+              margin-top:20rem;
+            }
+            </style>
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">404 Error!</h1>
+        <p class="lead">Its us not you, dont be scared and try again in some minutes...</p>
+        <p class="lead">
+          <a href="#" class="btn btn-lg btn-secondary">Home page</a>
+        </p>
+      </main>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Cover template for <a href="https://getbootstrap.com/">Froxine Company</a>, by <a href="https://twitter.com/mdo">Devcode</a>.</p>
         </div>
+      </footer>
     </div>
-</div>
 
-{% endblock %}
 
-{% block footer %}{% endblock %}
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  </body>
+</html>
