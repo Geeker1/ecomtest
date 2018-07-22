@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +21,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'hueu+410^1-7cc*19%fst(^5*4xqb%w2(2j3i!c8&bt3$v1sye'
+SECRET_KEY = config('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,12 +87,8 @@ WSGI_APPLICATION = 'ecom.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ecomsite',
-        'USER': 'postgres',
-        'PASSWORD': 'pass123',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -134,7 +132,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 STATICFILES_DIRS = [
